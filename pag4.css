@@ -1,0 +1,79 @@
+:root{
+    /* PRIMEIRA PALETA DE CORES */
+    --color-1: #f23c50;
+    --color-2: #ffcb05;
+    --color-3: #e9f1df;
+    --color-4: #4ad9d9;
+    --color-5: #36b1bf;
+
+    /* SEGUNDA PALETA DE CORES */
+    --color-6: #ecc199;
+    --color-7: #cbdba7;
+    --color-8: #789342;
+    --color-9: #76c1c3;
+    --color-10: #548d95;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-4);
+    color: var(--color-1);
+}
+
+h1{
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+    font-style: italic;
+}
+
+.comidas {
+    display: flex; /* Organiza os itens lado a lado */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 40px; /* Espaçamento entre os itens */
+    margin: 20px; /* Margem ao redor do container */
+  }
+  
+  .comidas div {
+    text-align: center; /* Centraliza o conteúdo dentro de cada div */
+  }
+  
+  .comidas img {
+    width: 300px; /* Define a largura das imagens */
+    height: auto; /* Mantém a proporção original */
+    border-radius: 10px;
+  }
+  
+  .comidas p {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    margin-top: 10px; 
+    font-size: 20px; 
+  }
+
+.btn{
+    text-align: center;
+}
+
+.btn button{
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-8);
+    color: var(--color-2);
+    font-size: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 30px;
+    transition: ease 0.5s;
+}
+
+.btn button:hover{
+    background-color: var(--color-2);
+    color: var(--color-8);
+    transition: ease 0.5s;
+    transform: scale(1.3);
+}

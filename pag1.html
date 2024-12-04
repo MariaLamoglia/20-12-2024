@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pag1.css">
+    <title>Comemoração</title>
+    <script>
+        function abrirSim(){
+            window.location.href = "pag2.html";
+        };
+
+        function moverBotao() {
+      // Obter as dimensões da janela
+      const larguraJanela = window.innerWidth;
+      const alturaJanela = window.innerHeight;
+
+      // Tamanho do botão (ajustar conforme necessário)
+    const larguraBotao = 100; // Largura estimada do botão
+    const alturaBotao = 50;  // Altura estimada do botão
+
+       // Calcular novas posições, garantindo que o botão não saia da tela
+    const novaPosicaoX = Math.random() * (larguraJanela - larguraBotao); // -100 para evitar que saia da tela
+    const novaPosicaoY = Math.random() * (alturaJanela - alturaBotao); // -50 para evitar que saia da tela
+
+       // Atualizar a posição do botão
+    const botao = document.getElementById("fugir");
+    botao.style.position = "absolute"; // Garante que o botão possa ser movido
+    botao.style.left = novaPosicaoX + "px";
+    botao.style.top = novaPosicaoY + "px";
+    };
+    </script>
+</head>
+<body>
+    <div class="nos">
+      <h1>Feliz 1 ano e 4 meses para nós!!!</h1>
+      <p>(o famoso 16 meses de muita emoção 😅)</p>
+      <h2>Você gostaria de sair comigo para comemorarmos este dia tão incrível?</h2>
+      <div class="sim-nao">
+       <button onclick="abrirSim()">Simm 😁</button> 
+       <button id="fugir" onmouseover="moverBotao()">Não quero 👎</button>
+      </div>
+      <div class="please">
+        <img src="https://media.tenor.com/JaQeDPGZvHoAAAAM/cute-cat.gif" alt="gatinho-please">
+      </div>
+    </div>
+</body>
+</html>
+  
+

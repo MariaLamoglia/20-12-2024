@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botão que foge</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      overflow: hidden; /* Impede o botão de sair da tela */
+    }
+    #fugir {
+      position: absolute;
+      padding: 10px 20px;
+      background-color: #ff5555;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease; /* Suaviza os movimentos */
+    }
+  </style>
+  <script>
+    function moverBotao() {
+      // Calcula novas posições aleatórias para o botão
+      const larguraJanela = window.innerWidth;
+      const alturaJanela = window.innerHeight;
+
+      const novaPosicaoX = Math.random() * (larguraJanela - 100); // -100 para evitar que saia da tela
+      const novaPosicaoY = Math.random() * (alturaJanela - 50); // -50 para evitar que saia da tela
+
+      const botao = document.getElementById("fugir");
+      botao.style.left = novaPosicaoX + "px";
+      botao.style.top = novaPosicaoY + "px";
+    }
+  </script>
+</head>
+<body>
+  <button id="fugir" onmouseover="moverBotao()">Não quero 👎</button>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha sua comida</title>
+</head>
+<body>
+    <h1>Que comida você gostaria de comer?</h1>
+    <div class="comidas">
+        <div class="cq">
+            <img src="https://casaeconstrucao.org/wp-content/uploads/2017/02/fantasias-para-cachorro-hot-dog-dicas.jpg" alt="cachorro-quente">
+            <p><input type="radio" name="comida" value="Cachorro Quente"> Cachorro Quente</p>
+        </div>
+
+        <div class="h-b">
+            <img src="https://img.freepik.com/fotos-premium/um-hamburguer-e-batatas-fritas-em-uma-bandeja-com-um-copo-de-refrigerante_1053-15413.jpg" alt="um-hamburguer-batatinha-refri">
+            <p><input type="radio" name="comida" value="Hambúrguer com Batatinha e Refri"> Hambúrguer com Batatinha e Refri</p>
+        </div>
+
+        <div class="sushi">
+            <img src="https://images.mrcook.app/recipe-image/019158cc-fb95-750b-9bdb-1477883a5660" alt="sushi">
+            <p><input type="radio" name="comida" value="Sushizinho"> Sushizinho</p>
+        </div>
+
+        <div class="b-d">
+            <img src="https://www.guiadasemana.com.br/contentFiles/image/opt_w320h0/2017/10/FEA/55812_tgi-fridays-halloween.jpg" alt="batatinha-drinks">
+            <p><input type="radio" name="comida" value="Petiscos com Drinks"> Petiscos com Drinks</p>
+        </div>
+    </div>
+
+    <div class="btn">
+        <button onclick="enviarEscolha()">Continuar</button>
+    </div>
+
+    <script>
+        function enviarEscolha() {
+            // Captura o valor selecionado
+            const selecionado = document.querySelector('input[name="comida"]:checked');
+            
+            if (selecionado) {
+                // Salva no Local Storage
+                localStorage.setItem("comidaEscolhida", selecionado.value);
+                
+                // Redireciona para a próxima página
+                window.location.href = "resultado.html";
+            } else {
+                alert("Por favor, selecione uma comida antes de continuar!");
+            }
+        }
+    </script>
+</body>
+</html>
+
+
